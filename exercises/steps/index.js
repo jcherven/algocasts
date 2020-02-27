@@ -17,31 +17,31 @@
 //       '### '
 //       '####'
 
-// function steps(n) {
-//*** Non-recursive tactic
-// Derived from drawing a table of the output #'s and spaces
-// The table shows that spaces where column <= row have #'s, while others have spaces
-/* 1. From 0 to n
- *   1. create an empty string stair
- *   2. From 0 to n:
- *     1. if the current column is equal to or less than the current row
- *       1. add a # to stair
- *     2. else
- *       1. add a space to stair
- *   3. console.log stair
- */
-// for (let row = 0; row < n; row++) {
-//   let stair = '';
-//   for (let column = 0; column < n; column++) {
-//     if (column <= row) {
-//       stair += '#';
-//     } else {
-//       stair += ' ';
-//     }
-//   }
-//   console.log(stair);
-// }
-// }
+function steps(n) {
+  //*** Non-recursive tactic
+  // Derived from drawing a table of the output #'s and spaces
+  // The table shows that spaces where column <= row have #'s, while others have spaces
+  /* 1. From 0 to n
+   *   1. create an empty string stair
+   *   2. From 0 to n:
+   *     1. if the current column is equal to or less than the current row
+   *       1. add a # to stair
+   *     2. else
+   *       1. add a space to stair
+   *   3. console.log stair
+   */
+  for (let row = 0; row < n; row++) {
+    let stair = '';
+    for (let column = 0; column < n; column++) {
+      if (column <= row) {
+        stair += '#';
+      } else {
+        stair += ' ';
+      }
+    }
+    console.log(stair);
+  }
+}
 
 //*** Recursive tactic
 /* 1. if (row === n), break out of the function
