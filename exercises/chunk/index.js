@@ -10,16 +10,23 @@
 
 function chunk(array, size) {
   //*** Straight forward way
-  // const chunked = [];
-  // for (let element of array) {
-  //   const last = chunked[chunked.length - 1];
-  //   if (!last || last.length === size) {
-  //     chunked.push([element]);
-  //   } else {
-  //     last.push(element);
-  //   }
-  // }
-  // return chunked;
+  /* 1. create an ampty array to hold chunks called chunked
+   * 2. for each element in the unchunked array:
+   *   1. retrieve the last element in chunked
+   *   2. if the last element does not exist or its length is equal to chunk size:
+   *     1. push a new chunk into chunked with the current element
+   *     2. else add the current element into the chunk
+  */
+  const chunked = [];
+  for (let element of array) {
+    const last = chunked[chunked.length - 1];
+    if (!last || last.length === size) {
+      chunked.push([element]);
+    } else {
+      last.push(element);
+    }
+  }
+  return chunked;
   //*** Using the slice method
   // const chunked = [];
   // let index = 0;

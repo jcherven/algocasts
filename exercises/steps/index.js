@@ -48,20 +48,20 @@
  * 2. if stair is length === n, the row is complete
  * 3. if the length of the stair is less than or wqual to the current row number, add a #, otherwise add a space
  */
-function steps(n, row = 0, stair = '') {
-  if (n === row) {
-    return;
-  }
-  if (n === stair.length) {
-    console.log(stair);
-    return steps(n, row + 1);
-  }
-  if (stair.length <= row) {
-    stair += '#';
-  } else {
-    stair += ' ';
-  }
-  return steps(n, row, stair);
-}
+// function steps(n, row = 0, stair = '') {
+//   if (n === row) {
+//     return;
+//   }
+//   if (n === stair.length) {
+//     console.log(stair);
+//     return steps(n, row + 1);
+//   }
+//   if (stair.length <= row) {
+//     stair += '#';
+//   } else {
+//     stair += ' ';
+//   }
+//   return steps(n, row, stair);
+// }
 
 module.exports = steps;
