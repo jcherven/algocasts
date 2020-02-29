@@ -24,6 +24,25 @@
 
 const Queue = require('./queue');
 
-function weave(sourceOne, sourceTwo) {}
+function weave(sourceOne, sourceTwo) {
+  /* 1. Instantiate a new Queue object
+   * 2. While either of the passed in queues are not empty:
+   *   1. If there Queue 1 is populated:
+   *     1. pop this queue to the new Queue object
+   *   2. If Queue 2 is populated:
+   *     1. pop this queue and add it to the new queue object
+   * 3. return the new queue object
+   */
+  const q = new Queue();
+  while (sourceOne.peek() || sourceTwo.peek()) {
+    if (sourceOne.peek()) {
+      q.add(sourceOne.remove());
+    }
+    if (sourceTwo.peek()) {
+      q.add(sourceTwo.remove());
+    }
+  }
+  return q;
+}
 
 module.exports = weave;
