@@ -127,7 +127,7 @@ class LinkedList {
     previous.next = node;
   }
 
-  forEach() {
+  forEach(fn) {
     let node = this.head;
     let counter = 0;
     while (node) {
